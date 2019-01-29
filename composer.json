@@ -1,0 +1,6 @@
+{
+	"name": "whatysonneves/smart-mvc",
+    "require": {
+        "vlucas/phpdotenv": "^3.3"
+    }
+}
