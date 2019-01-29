@@ -1,6 +1,11 @@
 {
 	"name": "whatysonneves/smart-mvc",
-    "require": {
-        "vlucas/phpdotenv": "^3.3"
-    }
+	"require": {
+		"vlucas/phpdotenv": "^3.3"
+	},
+	"autoload": {
+		"files": [
+			"core/Helpers.php"
+		]
+	}
 }
