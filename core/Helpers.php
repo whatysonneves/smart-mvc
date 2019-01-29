@@ -13,7 +13,6 @@ if(!function_exists("init")) {
  * Função env
  * responsável por interpretar o arquivo .env na raiz do projeto
  */
-
 $dotenv = Dotenv\Dotenv::create(__DIR__."\\..\\");
 $dotenv->load();
 
