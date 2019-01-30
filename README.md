@@ -1,6 +1,6 @@
 # SMART-MVC
 
-Pequeno sistema MVC para criação de pequenos projetos.
+Pequeno sistema MVC (_Models_, _Views_ and _Controllers_) para criação de pequenos projetos.
 
 ## Índice
 
@@ -31,11 +31,9 @@ Pequeno sistema MVC para criação de pequenos projetos.
 
 #### Criando um novo Controller
 
-Para criar um novo controller, basta criar uma nova classe na pasta \_controllers.
+Para criar um novo _controller_, basta criar uma nova classe na pasta \_controllers.
 
 ```php
-<?php
-
 namespace Controllers;
 
 class AppController extends Controller
@@ -45,11 +43,9 @@ class AppController extends Controller
 
 #### Adicionando Actions neste Controller
 
-Assim como no Laravel, cada action responde a um método na classe.
+Assim como no Laravel, cada _action_ responde a um método na classe.
 
 ```php
-<?php
-
 namespace Controllers;
 
 class AppController extends Controller
@@ -65,11 +61,9 @@ class AppController extends Controller
 
 #### Compactando variáveis para a view
 
-É possível compactar variáveis para a view usando o método `compact()` como segundo parâmetro no método `view()`.
+É possível compactar variáveis para a _view_ usando o método `compact()` como segundo parâmetro no método `view()`.
 
 ```php
-<?php
-
 namespace Controllers;
 
 class AppController extends Controller
@@ -88,11 +82,9 @@ class AppController extends Controller
 
 #### Criando uma nova Model
 
-Para criar uma nova model, basta criar uma nova classe na pasta \_models.
+Para criar uma nova _model_, basta criar uma nova classe na pasta \_models.
 
 ```php
-<?php
-
 namespace Models;
 
 class Product extends Model
@@ -106,7 +98,7 @@ class Product extends Model
 
 ```
 
-O método construtor é importante, pois, ele inicia a conexão com o banco de dados e seta qual é a tabela da model.
+O método construtor é importante, pois, ele inicia a conexão com o banco de dados e seta qual é a tabela da _model_.
 
 #### Inserindo dados na tabela
 
@@ -126,7 +118,7 @@ $get = new Models\Product;
 $products = $get->read(); // retorna mysqli instance, like get all
 ```
 
-É possível informar quais colunas você deseja puxar e a condição where.
+É possível informar quais colunas você deseja puxar e a condição _where_.
 
 ```php
 $get = new Models\Product;
@@ -150,7 +142,7 @@ $product = new Models\Product;
 $product->update(["name" => "New Model Blue Shirt", "quantity" => 5], "id = 1"); // retorna true
 ```
 
-* É possível fazer update sem where 😱
+* É possível fazer _update_ sem _where_ 😱
 
 #### Deletando dados da tabela
 
@@ -161,15 +153,15 @@ $product = new Models\Product;
 $product->delete("id = 1"); // retorna true
 ```
 
-* Não é possível fazer delete sem where 😁 (até tem como, mas não aconselho)
+* Não é possível fazer _delete_ sem _where_ 😁 (até tem como, mas não aconselho)
 
 ### Views
 
 #### Criando uma nova View
 
-Para criar uma nova view, é necessário criar um arquivo dentro da pasta \_views. As views neste projeto MVC não tem nenhuma facilidade, devem ser feitas na mão ao estilo _procedural_ 😅
+Para criar uma nova _view_, é necessário criar um arquivo dentro da pasta \_views. As _views_ neste projeto MVC não tem nenhuma facilidade, devem ser feitas na mão ao estilo _procedural_ 😅
 
-Exemplo: \_views/home.php
+Exemplo: **\_views/home.php**
 ```php
 <!DOCTYPE html>
 <html>
@@ -184,7 +176,7 @@ Exemplo: \_views/home.php
 </html>
 ```
 
-1. O Core deste projeto possui funções _helpers_ que visam facilitar o desenvolvimento de quem estiver trabalhando. Um desses _helpers_ é a função `project_title(string)` que monta uma _string_ para ser usada na tag _title_ do site.
+1. O _Core_ deste projeto possui funções _helpers_ que visam facilitar o desenvolvimento de quem estiver trabalhando. Um desses _helpers_ é a função `project_title(string)` que retorna uma _string_ para ser usada na tag _title_ do site.
 2. As _views_ deste projeto devem sempre terminar em .php pois o _helper_ `view()` só reconhece este tipo de arquivo.
 
 ### Helpers
@@ -206,7 +198,7 @@ Responsável por trazer o _$\_REQUEST_ de uma chave, o _$str_ é a chave da arra
 Responsável por incluir o arquivo da View e extrair as variáveis que são compactadas no _Controller_.
 
 #### redirect($route)
-Responsável por redirecionar a requisição para outra rota._
+Responsável por redirecionar a requisição para outra rota.
 
 #### url($route, $query)
 Responsável por retornar uma _string_ url com a rota e uma _query string_, quando necessário.
