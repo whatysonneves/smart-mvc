@@ -1,8 +1,13 @@
 <?php
 
-// Inclui o bootstrap do projeto
-require "../core/bootstrap.php";
+// Inclui o autoload do Composer
+require "../vendor/autoload.php";
 
-// echo init();
+// Declaração das rotas em singleton
+require "../routes.php";
 
-// var_dump(Core\Route::$routes);
+// inicia o banco de dados em singleton
+Core\DB::run();
+
+// inicia as rotas em singleton
+Core\Route::run();

@@ -42,9 +42,10 @@ class Route
 		return header("Location: ".self::url($route));
 	}
 
-	protected static function url($route = "")
+	public static function url($route = "", $query = [])
 	{
-		return $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/".ltrim($route, "/");
+		$query = empty($query) ? "" : "?".http_build_query($query);
+		return $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["HTTP_HOST"]."/".ltrim($route, "/").$query;
 	}
 
 	protected static function getUrlRoute()

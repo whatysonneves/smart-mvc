@@ -49,8 +49,9 @@ if(!function_exists("input")) {
  * Função view
  */
 if(!function_exists("view")) {
-	function view($name) {
+	function view($name, $compact = []) {
 		if(file_exists("../_views/".ltrim($name, "/").".php")) {
+			extract($compact);
 			return include "../_views/".ltrim($name, "/").".php";
 		}
 		return redirect("/error?error=view-not-found");
@@ -63,5 +64,14 @@ if(!function_exists("view")) {
 if(!function_exists("redirect")) {
 	function redirect($route) {
 		return Route::redirect($route);
+	}
+}
+
+/**
+ * Função url
+ */
+if(!function_exists("url")) {
+	function url($route, $query = []) {
+		return Route::url($route, $query);
 	}
 }
