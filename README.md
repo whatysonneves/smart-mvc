@@ -14,6 +14,8 @@ Pequeno sistema MVC para criação de pequenos projetos.
 	- [Lendo dados da tabela]
 	- [Atualizando dados da tabela]
 	- [Deletando dados da tabela]
+- [Views]
+	- [Criando uma nova View]
 
 ## Como usar
 
@@ -151,7 +153,29 @@ $product = new Models\Product;
 $product->delete("id = 1"); // retorna true
 ```
 
-* Não é possível fazer delete sem where 😁
+* Não é possível fazer delete sem where 😁 (até tem, mas não aconselho)
+
+### Views
+
+#### Criando uma nova View
+
+Para criar uma nova view, é necessário criar um arquivo dentro da pasta \_views. As views neste projeto MVC não tem nenhuma facilidade, devem ser feitas na mão ao estilo _procedural_ 😅
+
+```php \_views/home.php
+<!DOCTYPE html>
+<html>
+<head>
+	<title><?php echo project_title("Home"); ?></title>
+</head>
+<body>
+
+	Bem vindo a Home do projeto Smart MVC :)
+
+</body>
+</html>
+```
+
+O Core deste projeto possui funções _helpers_ que visam facilitar o desenvolvimento de quem estiver trabalhando. Um desses _helpers_ é a função `project_title(string)` que monta uma _string_ para ser usada na tag title do site.
 
 [Controllers]: #controllers
 [Criando um novo Controller]: #criando-um-novo-controller
@@ -163,3 +187,5 @@ $product->delete("id = 1"); // retorna true
 [Lendo dados da tabela]: #lendo-dados-da-tabela
 [Atualizando dados da tabela]: #atualizando-dados-da-tabela
 [Deletando dados da tabela]: #deletando-dados-da-tabela
+[Views]: [#views]
+[Criando uma nova View]: [#criando-uma-nova-view]
