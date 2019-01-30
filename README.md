@@ -187,5 +187,5 @@ O Core deste projeto possui funções _helpers_ que visam facilitar o desenvolvi
 [Lendo dados da tabela]: #lendo-dados-da-tabela
 [Atualizando dados da tabela]: #atualizando-dados-da-tabela
 [Deletando dados da tabela]: #deletando-dados-da-tabela
-[Views]: [#views]
-[Criando uma nova View]: [#criando-uma-nova-view]
+[Views]: #views
+[Criando uma nova View]: #criando-uma-nova-view
