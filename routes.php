@@ -3,5 +3,7 @@
 use Core\Route;
 
 Route::get("error", "CoreController", "error");
-Route::get("home", "AppController", "home");
+
 Route::get("", "AppController", "home");
+Route::get("home", "AppController", "home");
+Route::get("contact", "AppController", "contact");

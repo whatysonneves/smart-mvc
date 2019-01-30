@@ -6,6 +6,7 @@
 <body>
 
 	Home page
+	<a href="<?php echo url('contact'); ?>">Contact page</a>
 
 </body>
 </html>
