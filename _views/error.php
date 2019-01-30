@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Error page</title>
+	<title><?php echo project_title("Error"); ?></title>
 </head>
 <body>
 
-	Erro page
+<?php if(empty($error)) { ?>
+	Erro não reconhecido.
+<?php } else { ?>
+	<?php echo $error; ?>
+
+<?php } ?>
 
 </body>
 </html>

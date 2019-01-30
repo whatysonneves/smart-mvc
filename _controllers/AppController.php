@@ -15,7 +15,8 @@ class AppController extends Controller
 
 	public function contact()
 	{
-		return view("contacts/contact");
+		$test = uniqid();
+		return view("contacts/contact", compact("test"));
 	}
 
 }

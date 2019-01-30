@@ -7,6 +7,8 @@
 
 	Contact page
 	<a href="<?php echo url('home'); ?>">Home page</a>
+	<?php echo $test; ?>
+
 
 </body>
 </html>
