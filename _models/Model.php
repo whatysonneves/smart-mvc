@@ -114,7 +114,7 @@ class Model extends DB
 	public function delete($where = "", $debug = false)
 	{
 		if(empty($this->table)) { return false; }
-		if(empty($where)) { return false; }
+		if(empty($where)) { return false; } // inibe delete sem where, rsrs
 		$query = sprintf("DELETE FROM %s WHERE %s", $this->table, $where);
 		return $this->return($query, $debug);
 	}

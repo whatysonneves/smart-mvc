@@ -100,6 +100,13 @@ Para ler os dados da tabela, é necessário usar o método `read()`.
 
 ```php
 $get = new Models\Product;
+$products = $get->read(); // retorna mysqli instance, like get all
+```
+
+É possível informar quais colunas você deseja puxar e a condição where.
+
+```php
+$get = new Models\Product;
 $products = $get->read(["name", "amount"], "id = 1"); // retorna mysqli instance
 ```
 
@@ -110,3 +117,25 @@ while($product = $products->fetch_assoc()) {
 	echo $product["name"];
 }
 ```
+
+#### Atualizando dados da tabela
+
+Para atualizar os dados da tabela, é necessário usar o método `update()`.
+
+```php
+$product = new Models\Product;
+$product->update(["name" => "New Model Blue Shirt", "quantity" => 5], "id = 1"); // retorna true
+```
+
+* É possível fazer update sem where 😱
+
+#### Deletando dados da tabela
+
+Para deletar os dados da tabela, é necessário usar o método `delete()`.
+
+```php
+$product = new Models\Product;
+$product->delete("id = 1"); // retorna true
+```
+
+* Não é possível fazer delete sem where 😁
