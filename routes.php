@@ -6,4 +6,3 @@ Route::get("error", "CoreController", "error");
 
 Route::get("", "AppController", "home");
 Route::get("home", "AppController", "home");
-Route::get("contact", "AppController", "contact");

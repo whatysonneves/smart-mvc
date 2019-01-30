@@ -10,13 +10,8 @@ class AppController extends Controller
 
 	public function home()
 	{
-		return view("home");
-	}
-
-	public function contact()
-	{
-		$test = uniqid();
-		return view("contacts/contact", compact("test"));
+		$date = date("d/m/Y");
+		return view("home", compact("date"));
 	}
 
 }

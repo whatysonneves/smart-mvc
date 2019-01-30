@@ -1,5 +1,6 @@
 {
 	"name": "whatysonneves/smart-mvc",
+	"description": "Abstrair consultas com o banco de dados, usando a orientação a objetos.",
 	"require": {
 		"vlucas/phpdotenv": "^3.3"
 	},

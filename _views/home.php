@@ -2,12 +2,12 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Home page</title>
+	<title><?php echo project_title("Home page"); ?></title>
 </head>
 <body>
 
-	Home page
-	<a href="<?php echo url('contact'); ?>">Contact page</a>
+	Home page<br />
+	Hoje é <?php echo $date; ?>
 
 
 </body>

@@ -47,6 +47,7 @@ if(!function_exists("input")) {
 
 /**
  * Função view
+ * responsável por incluir o arquivo da view e extrair as variáveis
  */
 if(!function_exists("view")) {
 	function view($name, $compact = []) {
@@ -60,6 +61,7 @@ if(!function_exists("view")) {
 
 /**
  * Função redirect
+ * responsável por redirecionar a requisição para outra rota
  */
 if(!function_exists("redirect")) {
 	function redirect($route) {
@@ -69,6 +71,7 @@ if(!function_exists("redirect")) {
 
 /**
  * Função url
+ * responsável por retornar a string url com a rota
  */
 if(!function_exists("url")) {
 	function url($route, $query = []) {

@@ -6,6 +6,7 @@ use Core\DB;
 
 /**
  * Classe Model
+ * classe usada para adicionar métodos a todos os Models
  */
 class Model extends DB
 {
@@ -18,23 +19,14 @@ class Model extends DB
 		$this->init($table);
 	}
 
-	public function return($query, $debug = false)
-	{
-		if($debug) {
-			return $query;
-		} else {
-			return $this->conn->query($query);
-		}
-	}
-
 	/**
 	 * method create
 	 * responsável por criar o registro na base de dados
-	 * @usage $model->create(["column" => "value"])
 	 * @param $data, $debug
 	 * @return mysqli output, sql query or boolean
 	 */
-	public function create($data = [], $debug = false) {
+	public function create($data = [], $debug = false)
+	{
 		if(empty($this->table)) { return false; }
 		$count = count($data);
 		if($count > 0) {
@@ -57,7 +49,14 @@ class Model extends DB
 		}
 	}
 
-	public function read($columns = [], $where = "", $debug = false) {
+	/**
+	 * method read
+	 * responsável por pegar os registros na base de dados
+	 * @param $data, $where, $debug
+	 * @return mysqli output or sql query
+	 */
+	public function read($columns = [], $where = "", $debug = false)
+	{
 		if(empty($this->table)) { return false; }
 		$count = count($columns);
 		if($count > 0) {
@@ -78,7 +77,14 @@ class Model extends DB
 		return $this->return($query, $debug);
 	}
 
-	public function update($data = [], $where = "", $debug = false) {
+	/**
+	 * method update
+	 * responsável por atualizar o registro na base de dados
+	 * @param $data, $where, $debug
+	 * @return mysqli output, sql query or boolean
+	 */
+	public function update($data = [], $where = "", $debug = false)
+	{
 		if(empty($this->table)) { return false; }
 		$count = count($data);
 		if($count > 0) {
@@ -99,7 +105,14 @@ class Model extends DB
 		}
 	}
 
-	public function delete($where = "", $debug = false) {
+	/**
+	 * method delete
+	 * responsável por deletar o registro na base de dados
+	 * @param $where, $debug
+	 * @return sql query or boolean
+	 */
+	public function delete($where = "", $debug = false)
+	{
 		if(empty($this->table)) { return false; }
 		if(empty($where)) { return false; }
 		$query = sprintf("DELETE FROM %s WHERE %s", $this->table, $where);
@@ -116,16 +129,28 @@ class Model extends DB
 
 	public function setConn()
 	{
-		$this->conn = \Core\DB::$connection;
+		$this->conn = parent::$connection;
+		return $this;
 	}
 
-	public function setTable($table) {
+	public function setTable($table)
+	{
 		$this->table = $table;
 		return $this;
 	}
 
-	protected function filter($str) {
+	protected function filter($str)
+	{
 		return ( get_magic_quotes_gpc() ? $str : addslashes($str) );
+	}
+
+	protected function return($query, $debug = false)
+	{
+		if($debug) {
+			return $query;
+		} else {
+			return $this->conn->query($query);
+		}
 	}
 
 }

@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Smart MVC
+ * created by Whatyson Neves
+ * @author Whatyson Neves <contato@whatysonneves.com>
+ */
+
 // Inclui o autoload do Composer
 require "../vendor/autoload.php";
 
