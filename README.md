@@ -177,7 +177,7 @@ Exemplo: \_views/home.php
 </html>
 ```
 
-1. O Core deste projeto possui funções _helpers_ que visam facilitar o desenvolvimento de quem estiver trabalhando. Um desses _helpers_ é a função `project_title(string)` que monta uma _string_ para ser usada na tag title do site.
+1. O Core deste projeto possui funções _helpers_ que visam facilitar o desenvolvimento de quem estiver trabalhando. Um desses _helpers_ é a função `project_title(string)` que monta uma _string_ para ser usada na tag _title_ do site.
 2. As _views_ deste projeto devem sempre terminar em .php pois o _helper_ `view()` só reconhece este tipo de arquivo.
 
 ### Helpers
@@ -187,13 +187,22 @@ Primeiro _helper_ criado no projeto, serve apenas para mostrar um hello world on
 
 #### env($name, $empty)
 Responsável por interpretar o arquivo .env na raiz do projeto.
-Recebe as variáveis $name e $empty, onde $name se refere ao nome da entrada no arquivo .env e $empty é o que exibir caso esteja vazia a variável.
+Recebe as variáveis _$name_ e _$empty_, onde _$name_ se refere ao nome da entrada no arquivo .env e _$empty_ é o que exibir caso esteja vazia a variável.
 
 #### project_title($str)
+Responsável por retornar uma _string_ para ser usada na tag _title_ do site.
+
 #### input($str, $empty)
+Responsável por trazer o _$\_REQUEST_ de uma chave, o _$str_ é a chave da array e _$empty_ é o que exibir caso não exista a chave na array.
+
 #### view($name, $compact)
+Responsável por incluir o arquivo da View e extrair as variáveis que são compactadas no _Controller_.
+
 #### redirect($route)
+Responsável por redirecionar a requisição para outra rota._
+
 #### url($route, $query)
+Responsável por retornar uma _string_ url com a rota e uma _query string_, quando necessário.
 
 [Controllers]: #controllers
 [Criando um novo Controller]: #criando-um-novo-controller
@@ -208,3 +217,10 @@ Recebe as variáveis $name e $empty, onde $name se refere ao nome da entrada no 
 [Views]: #views
 [Criando uma nova View]: #criando-uma-nova-view
 [Helpers]: #helpers
+[init()]: #init
+[env($name, $empty)]: #envname-empty
+[project_title($str)]: #project_titlestr
+[input($str, $empty)]: #inputstr-empty
+[view($name, $compact)]: #viewname-compact
+[redirect($route)]: #redirectroute
+[url($route, $query)]: #urlroute-query
