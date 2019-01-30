@@ -2,6 +2,19 @@
 
 Pequeno sistema MVC para criação de pequenos projetos.
 
+## Índice
+
+- [Controllers]
+-- [Criando um novo Controller]
+-- [Adicionando Actions neste Controller]
+-- [Compactando variáveis para a view]
+- [Models]
+-- [Criando uma nova Model]
+-- [Inserindo dados na tabela]
+-- [Lendo dados da tabela]
+-- [Atualizando dados da tabela]
+-- [Deletando dados da tabela]
+
 ## Como usar
 
 ### Controllers
@@ -139,3 +152,14 @@ $product->delete("id = 1"); // retorna true
 ```
 
 * Não é possível fazer delete sem where 😁
+
+[Controllers]: #controllers
+[Criando um novo Controller]: #criando-um-novo-controller
+[Adicionando Actions neste Controller]: #adicionando-actions-neste-controller
+[Compactando variáveis para a view]: #compactando-variáveis-para-a-view
+[Models]: #models
+[Criando uma nova Model]: #criando-uma-nova-model
+[Inserindo dados na tabela]: #inserindo-dados-na-tabela
+[Lendo dados da tabela]: #lendo-dados-da-tabela
+[Atualizando dados da tabela]: #atualizando-dados-da-tabela
+[Deletando dados da tabela]: #deletando-dados-da-tabela
