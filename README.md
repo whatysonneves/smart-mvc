@@ -5,15 +5,15 @@ Pequeno sistema MVC para criação de pequenos projetos.
 ## Índice
 
 - [Controllers]
--- [Criando um novo Controller]
--- [Adicionando Actions neste Controller]
--- [Compactando variáveis para a view]
+- - [Criando um novo Controller]
+- - [Adicionando Actions neste Controller]
+- - [Compactando variáveis para a view]
 - [Models]
--- [Criando uma nova Model]
--- [Inserindo dados na tabela]
--- [Lendo dados da tabela]
--- [Atualizando dados da tabela]
--- [Deletando dados da tabela]
+- - [Criando uma nova Model]
+- - [Inserindo dados na tabela]
+- - [Lendo dados da tabela]
+- - [Atualizando dados da tabela]
+- - [Deletando dados da tabela]
 
 ## Como usar
 
