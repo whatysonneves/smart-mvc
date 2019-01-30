@@ -17,6 +17,13 @@ Pequeno sistema MVC para criação de pequenos projetos.
 - [Views]
 	- [Criando uma nova View]
 - [Helpers]
+	- [init()]
+	- [env($name, $empty)]
+	- [project_title($str)]
+	- [input($str, $empty)]
+	- [view($name, $compact)]
+	- [redirect($route)]
+	- [url($route, $query)]
 
 ## Como usar
 
