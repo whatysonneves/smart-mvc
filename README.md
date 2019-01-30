@@ -16,6 +16,7 @@ Pequeno sistema MVC para criação de pequenos projetos.
 	- [Deletando dados da tabela]
 - [Views]
 	- [Criando uma nova View]
+- [Helpers]
 
 ## Como usar
 
@@ -153,7 +154,7 @@ $product = new Models\Product;
 $product->delete("id = 1"); // retorna true
 ```
 
-* Não é possível fazer delete sem where 😁 (até tem, mas não aconselho)
+* Não é possível fazer delete sem where 😁 (até tem como, mas não aconselho)
 
 ### Views
 
@@ -161,7 +162,8 @@ $product->delete("id = 1"); // retorna true
 
 Para criar uma nova view, é necessário criar um arquivo dentro da pasta \_views. As views neste projeto MVC não tem nenhuma facilidade, devem ser feitas na mão ao estilo _procedural_ 😅
 
-```php \_views/home.php
+Exemplo: \_views/home.php
+```php
 <!DOCTYPE html>
 <html>
 <head>
@@ -175,7 +177,23 @@ Para criar uma nova view, é necessário criar um arquivo dentro da pasta \_view
 </html>
 ```
 
-O Core deste projeto possui funções _helpers_ que visam facilitar o desenvolvimento de quem estiver trabalhando. Um desses _helpers_ é a função `project_title(string)` que monta uma _string_ para ser usada na tag title do site.
+1. O Core deste projeto possui funções _helpers_ que visam facilitar o desenvolvimento de quem estiver trabalhando. Um desses _helpers_ é a função `project_title(string)` que monta uma _string_ para ser usada na tag title do site.
+2. As _views_ deste projeto devem sempre terminar em .php pois o _helper_ `view()` só reconhece este tipo de arquivo.
+
+### Helpers
+
+#### init()
+Primeiro _helper_ criado no projeto, serve apenas para mostrar um hello world onde for usado.
+
+#### env($name, $empty)
+Responsável por interpretar o arquivo .env na raiz do projeto.
+Recebe as variáveis $name e $empty, onde $name se refere ao nome da entrada no arquivo .env e $empty é o que exibir caso esteja vazia a variável.
+
+#### project_title($str)
+#### input($str, $empty)
+#### view($name, $compact)
+#### redirect($route)
+#### url($route, $query)
 
 [Controllers]: #controllers
 [Criando um novo Controller]: #criando-um-novo-controller
@@ -189,3 +207,4 @@ O Core deste projeto possui funções _helpers_ que visam facilitar o desenvolvi
 [Deletando dados da tabela]: #deletando-dados-da-tabela
 [Views]: #views
 [Criando uma nova View]: #criando-uma-nova-view
+[Helpers]: #helpers
