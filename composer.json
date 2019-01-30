@@ -5,7 +5,9 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Core\\": "core/"
+			"Core\\": "core/",
+			"Controllers\\": "_controllers/",
+			"Models\\": "_models/"
 		},
 		"files": [
 			"core/Helpers.php"

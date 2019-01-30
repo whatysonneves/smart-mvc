@@ -1,5 +1,8 @@
 <?php
 
+use Core\Request;
+use Core\Route;
+
 // aqui virão as funções helpers do projeto
 
 // função hello world
@@ -29,5 +32,36 @@ if(!function_exists("env")) {
 if(!function_exists("project_title")) {
 	function project_title($str = "") {
 		return ( empty($str) ? "" : $str . " .:. " ) . env("PROJECT_NAME");
+	}
+}
+
+/**
+ * Função input
+ * responsável por trazer o $_REQUEST de uma key
+ */
+if(!function_exists("input")) {
+	function input($str = "", $empty = "") {
+		return Request::input($str, $empty);
+	}
+}
+
+/**
+ * Função view
+ */
+if(!function_exists("view")) {
+	function view($name) {
+		if(file_exists("../_views/".ltrim($name, "/").".php")) {
+			return include "../_views/".ltrim($name, "/").".php";
+		}
+		return redirect("/error?error=view-not-found");
+	}
+}
+
+/**
+ * Função redirect
+ */
+if(!function_exists("redirect")) {
+	function redirect($route) {
+		return Route::redirect($route);
 	}
 }
